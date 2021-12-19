@@ -1,21 +1,15 @@
 
-class Seed
-  def self.start
-    seed = Seed.new
-    seed.generate_destinations
-  end
+Destination.create!(name: 'Denver',
+                    zip: '80249',
+                    description: 'a city in Colorado',
+                    image_url: 'https://denver.cbslocal.com/wp-content/uploads/sites/15909806/2019/11/denver-skyline-cold-snow-colorado-2.jpg?w=1500')
 
-  def generate_destinations
-    50.times do |i|
-      dest = Destination.create!(
-        name: Faker::Address.city,
-        zip: Faker::Address.zip,
-        description: Faker::Lorem.sentence,
-        image_url: Faker::Placeholdit.image
-      )
-      puts "Destination #{i}: #{dest.name} created!"
-    end
-  end
-end
+Destination.create!(name: 'San Juan',
+                    zip: '12345',
+                    description: 'a city in Puerto Rico',
+                    image_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/San_Juan_2015.jpg/280px-San_Juan_2015.jpg')
 
-Seed.start
+Destination.create!(name: 'Little Rock',
+                    zip: '72076',
+                    description: 'a city in Arkansas',
+                    image_url: 'https://upload.wikimedia.org/wikipedia/commons/0/04/Skyline_of_Little_Rock%2C_Arkansas_-_20050319.jpg')
